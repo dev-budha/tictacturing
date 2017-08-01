@@ -1,10 +1,14 @@
-import React from 'react';
-import { render } from 'react-dom';
+import React from 'react'
+import { render } from 'react-dom'
+import { Router, browserHistory} from 'react-router'
+
+import { Routes } from './routes'
 
 render(
-	<div>
-		<h1>Hello World!</h1>
-	</div>,
+	<Router
+		history={browserHistory}
+		routes = {Routes}
+	/>,
 	document.getElementById('root')
-);
+)
 
