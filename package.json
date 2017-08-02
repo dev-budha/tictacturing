@@ -50,7 +50,7 @@
     "babel-plugin-react-relay": "^0.10.0"
   },
   "scripts": {
-    "start": "GRAPHQL_ENDPOINT=https://api.graph.cool/relay/v1/cj5sa0jly8x800122vngmfme4 node scripts/start.js",
+    "start": "node scripts/start.js",
     "build": "GRAPHQL_ENDPOINT=https://api.graph.cool/relay/v1/cj5sa0jly8x800122vngmfme4 node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
