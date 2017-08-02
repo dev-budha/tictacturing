@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import { Stage } from 'react-konva'
+import RaisedButton from 'material-ui/RaisedButton'
 
 import { Board, Squares } from '../styled/TicTacToe'
 
@@ -55,12 +56,10 @@ export class TicTacToe extends Component {
 		})
 	}
 
-	move = (index, marker) => {
-
-		console.log ('moving...')
+	move = (index, marker) => {		
 
 	    this.setState( (prevState, prop) => {
-	    	console.log("changing state")
+	    
 	    	let {gameState, yourTurn, gameOver, winner} = prevState
 
 	    	yourTurn = !yourTurn
@@ -68,9 +67,7 @@ export class TicTacToe extends Component {
 	    	gameState.splice(index, 1, marker)
 
 	    	let foundWin = this.winChecker(gameState)
-
-	    	console.log(foundWin)
-
+	 
 	    	if (foundWin) {
 	    		winner = gameState[foundWin[0]]
 	    	}
@@ -135,6 +132,19 @@ export class TicTacToe extends Component {
 
 	}
 
+	resetState = () => {
+		let tempGameState = this.state.gameState.fill(false)
+
+		this.setState({
+			gameState: tempGameState,
+			gameOver: false,
+			yourTurn: true,
+			winner: false,
+			win: false
+
+		})
+	}
+
 	render() {
 
 		let { 
@@ -171,7 +181,12 @@ export class TicTacToe extends Component {
 						move = { this.move }
 
 					/>
-				</Stage>		
+				</Stage>	
+				<RaisedButton 
+					label = {'Restart'}
+					onTouchTap = { this.resetState }
+					secondary = {true}
+				/>	
 				
 			</div>
 		) 
