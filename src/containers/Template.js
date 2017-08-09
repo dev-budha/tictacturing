@@ -15,7 +15,7 @@ export class Template extends Component {
 				<div>
 					<NavDrawer />
 					<Header>
-						Tic Tac Turing
+						
 					</Header>
 					<Main>
 						{this.props.children}						

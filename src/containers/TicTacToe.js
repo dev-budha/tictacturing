@@ -56,7 +56,9 @@ export class TicTacToe extends Component {
 		})
 	}
 
-	move = (index, marker) => {		
+	move = (index, marker) => {	
+
+		console.log("moving...")	
 
 	    this.setState( (prevState, prop) => {
 	    
@@ -91,7 +93,7 @@ export class TicTacToe extends Component {
 	  }
 
 	makeAiMove = (gameState) => {
-		console.log('Ai move')
+		
 		let otherMark = this.state.otherMark
 		let openSquares = []
 
