@@ -8,7 +8,7 @@ import Divider from 'material-ui/Divider'
 import { NavToggleButton } from '../styled/NavDrawer'
  
 
-export class NavDrawer extends Component {
+class NavDrawer extends Component {
 
 	state = {
 		open : false,
@@ -69,3 +69,5 @@ export class NavDrawer extends Component {
 		)
 	}
 }
+
+export default NavDrawer

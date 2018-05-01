@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { Stage } from 'react-konva'
 import RaisedButton from 'material-ui/RaisedButton'
+import Relay from 'react-relay/classic'
 
 import { Board, Squares } from '../styled/TicTacToe'
 
@@ -195,3 +196,17 @@ export class TicTacToe extends Component {
 		
 	}
 }
+
+export default Relay.createContainer(
+	TicTacToe, {
+		fragments: {
+			viewer: () => Relay.QL`
+				fragment on Viewer {
+					user {
+						id
+					}
+				}
+			`,
+		}
+	}
+)
